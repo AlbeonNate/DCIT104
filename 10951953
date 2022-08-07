@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+// Fortunate Atubiga 10951983
+using namespace std;
+
+bool PrimeNumber(int n)
+{
+    if (n <= 1)
+        return false;
+
+    for (int i = 2; i < n; i++)
+        if (n % i == 0)
+            return false;
+
+    return true;
+}
+
+// Function to print primes
+int Sum(int n) {
+    int sum = 0;
+    for (int i = 2; i < n; i++) {
+        if (PrimeNumber(i)) {
+            sum = sum + i;
+        }
+    }
+    return sum;
+}
+
+int main()
+{
+    int num;
+    cout << "Enter any number: ";
+    cin >> num;
+
+    int sum = Sum(num);
+    cout << "The sum is " << sum << endl;
+
+    return 0;
+}
